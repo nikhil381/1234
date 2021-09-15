@@ -1,0 +1,45 @@
+<div>
+  <img [src]= "'Snapchat-1944260374/jpg;' +image paths">
+</div>
+
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">
+    <button #r="matMenuTrigger" mat-icon-button [matMenuTriggerFor]="menu" >
+      <mat-icon (mouseover)="open(r)"  >menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+  </button>
+  <button mat-menu-item>
+        <mat-icon>people_outline</mat-icon>
+        <span>Connecting</span>
+      </button>
+  <button mat-menu-item>
+        <mat-icon>videocam</mat-icon>
+        <span>Let's talk</span>
+      </button>
+  <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+  </mat-menu>
+  </span>
+  <span class="fill-remaining-space">Nikhil Sharma</span>
+</mat-toolbar>
+
+<br>
+
+<label *ngFor="let radiobutton of radioItems">
+  <input type="radio" name="options" (click)="model.option = radiobutton"
+  [checked]="radiobutton === model.option">{{radiobutton}}
+</label>
+<p>
+  <button (click)="model.option = 'option'">
+    Set option 
+  </button>
+</p>
+<p>
+  Selected option: {{model.option}}
+</p>
